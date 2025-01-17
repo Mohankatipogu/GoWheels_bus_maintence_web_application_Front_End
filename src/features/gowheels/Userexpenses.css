@@ -1,0 +1,13 @@
+@media screen and (min-width: 576px) and (max-width: 767px) {
+    .addbtn{
+        justify-self: end;
+        background-color: red !important;
+    }
+  }
+  
+  @media screen and (max-width: 575px) {
+    .addbtn{
+        justify-self: end;
+        background-color: red !important;
+    }
+  }

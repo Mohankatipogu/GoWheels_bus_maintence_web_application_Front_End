@@ -1,0 +1,28 @@
+
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    .feture {
+      width: 300px;
+      height:auto ;
+      display: flex;
+      gap: 5%;
+    }
+  }
+  
+  @media screen and (min-width: 576px) and (max-width: 767px) {
+    .feture {
+        width: 300px;
+        height:auto ;
+        display: flex;
+        gap: 5%;
+      }
+  }
+  
+  @media screen and (max-width: 575px) {
+    .feture {
+        width: 300px;
+        height:auto ;
+        display: flex;
+        gap: 5%;
+      }
+  }
+  

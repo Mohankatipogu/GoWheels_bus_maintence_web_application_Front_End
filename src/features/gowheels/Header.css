@@ -1,0 +1,51 @@
+.title{
+    margin-top: 10%;
+}
+.hdlogo{
+    height: 150px;
+    width: 200px;
+}
+.hdtext{
+    font-size: 50px;
+}
+.text{
+    font-size: 20px;
+    font-weight: lighter;
+}
+ .getbtn{
+        min-height: 50px;
+        width: 120px;
+        border: 2px solid;
+    }
+.getbtn:hover{
+        background-color:#000;
+        color: white;
+        transition: 0.5s;
+    }
+.hmbtn{
+      cursor: pointer;
+    }
+.logout{
+    border: 2px solid;
+}
+.logout:hover{
+    background-color: #213555;
+    color: white;
+}
+.logo {
+    width: 150px; 
+    height: 75px; 
+  }
+ 
+  @media screen  and (max-width:703px){
+          .title{
+            font-size: 10px;
+            align-items: center;
+            justify-content: center;
+            justify-items: center;
+          }
+        .hdlogo{
+          height: 200px;
+          width: 150px;
+          }
+  }

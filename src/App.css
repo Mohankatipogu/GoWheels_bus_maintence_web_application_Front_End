@@ -1,0 +1,51 @@
+.app-container {
+  display: flex;
+  height: 100vh; /* Ensure full height of the viewport */
+}
+
+.main-content-container {
+  flex: 1; 
+  padding: 20px;
+  background-color:#F5F5F5;
+}
+
+.navbar-container {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.menu {
+  list-style: none;
+  padding-left: 0;
+}
+
+.menu-item {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.menu-item:hover {
+  background-color: #495057;
+}
+
+.main-content {
+  padding: 20px;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  margin-left: 10px;
+}
+
+.logo {
+  width: 30px;
+  height: 30px;
+}
+
