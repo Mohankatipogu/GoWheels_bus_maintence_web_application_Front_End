@@ -159,6 +159,19 @@ function Admin() {
                    <th>Balance</th>
                    <td>Rs. {selectedDriver.salary - selectedDriver.advance}</td>
                  </tr>
+                 <tr>
+                  <th>Date</th>
+                  <td className="align-middle">
+                        {new Date(selectedDriver.date).toLocaleString("en-IN", {
+                          year: "numeric",
+                          month: "long",
+                          day: "numeric",
+                          hour: "2-digit",
+                          minute: "2-digit",
+                          second: "2-digit",
+                        })}
+                      </td>
+                 </tr>
                </tbody>
              </table>
            </div>

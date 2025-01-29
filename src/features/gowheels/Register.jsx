@@ -3,10 +3,11 @@ import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { useAddleadMutation } from "../../services/gowheelsapi";
 import { useNavigate } from "react-router-dom";
-import Upload from "./Uplods";
+import { LogOut } from "lucide-react";
 
 function DriverExpensesForm() {
-
+  const [preview, setPreview] = useState(null);
+  const [fieldValue,setFieldValue]=useState();
      const aRef=React.useRef();
      const bRef=React.useRef();
      const cRef=React.useRef();
@@ -20,7 +21,6 @@ function DriverExpensesForm() {
          aRef.current.focus();
      },[])
 
-  const[fieldValue,setFieldValue]=useState()
     const [AddDriverFn]=useAddleadMutation()
     var navigate=useNavigate()
     const initialValues = {
@@ -32,6 +32,7 @@ function DriverExpensesForm() {
       address:"",
       image:"",
       advance:"",
+      date:"",
     }
   };
   const validationSchema = Yup.object({
@@ -226,20 +227,34 @@ function DriverExpensesForm() {
                     <label htmlFor="driver.image" className="form-label">
                         image
                       </label>
-                      <Field
-                        type="text"
+                      <label htmlFor="driver.image" className="form-label">Upload Image</label>
+                      <input
+                        type="file"
                         id="driver.image"
-                        name="driver.image"
                         className="form-control"
-                        placeholder="Enter address"
-                        ref={eRef}
-                        onKeyUp={((ev)=>{Fenterkey(ev)})}
+                        accept="image/*"
+                        onChange={(event) => {
+                          const file = event.currentTarget.files[0];
+                          setFieldValue("driver.image", file);
+                          setPreview(URL.createObjectURL(file));
+                        }}
                       />
+                      <ErrorMessage name="driver.image" component="div" className="text-danger" />
+                      {preview && <img src={preview} alt="Preview" width="100" className="mt-2" />}
+                    </div>
                       <ErrorMessage
                         name="driver.image"
                         component="div"
                         className="text-danger"
                       />
+                      <div className="mb-3 m-3">
+                      <Field 
+                      type='date' 
+                      id="driver.date"
+                      name="driver.date"
+                      >
+                      </Field>
+                      </div>
                     </div>
                      <button type="submit" className="btn btn-lg w-100 mt-4 registerbtn bg-primary text-light" ref={gRef}>
                       Register
@@ -248,7 +263,6 @@ function DriverExpensesForm() {
                 </div>
               </div>
             </div>
-          </div>
           </div>
         </Form>
       )}
